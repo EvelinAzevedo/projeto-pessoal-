@@ -4,9 +4,13 @@ const TarefasConcluida = require('./class/TarefasConcluida')
 
 const tarefas = []
 
-tarefas.push(new Tarefa("Estudar POO", "Praticar encapsulamento e herança"))
-tarefas.push(new TarefasConcluida("Fazer projeto", "Separar classes em arquivos"))
-tarefas.push(new Tarefa("Descansar", "Assistir série favorita"))
+const tarefa1 = new Tarefa("Estudar POO", "Praticar encapsulamento e herança")
+const tarefa2 = new Tarefa("Fazer projeto", "Separar classes em arquivos")
+const tarefa3 = new Tarefa("Descansar", "Assistir série favorita")
+
+tarefas.push(tarefa1)
+tarefas.push(tarefa2)
+tarefas.push(tarefa3)
 
 function listarTarefas() {
   console.log(" Lista de Tarefas:")
@@ -25,6 +29,7 @@ function concluirTarefa() {
   }
 
   const tarefa = tarefas[index]
+  tarefa.concluida = true
 
   if (tarefa instanceof TarefasConcluida) {
     console.log("Tarefa já está concluída.")
@@ -32,6 +37,7 @@ function concluirTarefa() {
   }
 
   tarefas[index] = new TarefasConcluida(tarefa.titulo, tarefa.descricao)
+  tarefas[index].concluida = true
   console.log("Tarefa concluída!")
 }
 

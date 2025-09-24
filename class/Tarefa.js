@@ -1,11 +1,9 @@
 class Tarefa {
     #titulo
     #descricao
-    #concluida
     constructor(titulo,descricao) {
         this.#titulo = titulo
         this.#descricao = descricao
-        this.#concluida = false
     }
 
     get titulo() {
@@ -24,20 +22,12 @@ class Tarefa {
         this.#descricao = valor
     }
 
-    get concluida() {
-        return this.#concluida
-    }
-
-    set concluida(valor) {
-        this.#concluida = valor
-    }
-
     concluir() {
         this.concluida = true
     }
 
     exibir() {
-        return `${this.concluida ? '[✔️]' : '[ ]'} ${this.titulo} - ${this.descricao}`
+        return `[ ] ${this.titulo} - ${this.descricao}`
     }
 }
 
